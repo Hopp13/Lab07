@@ -22,7 +22,7 @@ class Controller:
         if tipo == "Museo":
             self._view.dropdown_museo.options.append(ft.dropdown.Option("Nessun filtro"))
             for museo in self._model.get_musei():
-                self._view.dropdown_museo.options.append(ft.dropdown.Option(museo))
+                self._view.dropdown_museo.options.append(ft.dropdown.Option(museo.nome))
         elif tipo == "Epoca":
             self._view.dropdown_epoca.options.append(ft.dropdown.Option("Nessun filtro"))
             epoche = set(self._model.get_epoche())

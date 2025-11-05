@@ -13,10 +13,11 @@ class MuseoDAO:
     def lista_musei(self):
         connection = ConnessioneDB.get_connection()
         with connection.cursor() as cursor:
-            query = "SELECT nome FROM museo"
+            query = "SELECT * FROM museo"
             cursor.execute(query)
             lista_musei = []
             for row in cursor.fetchall():
-                lista_musei.append(row[0])
+                museo = Museo(int(row[0]), row[1], row[2])
+                lista_musei.append(museo)
             connection.close()
             return lista_musei
