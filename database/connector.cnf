@@ -1,6 +1,4 @@
 [client]
 user=root
-password=
-host=127.0.0.1
-database=musei_torino
+database=musei_torino_lab07
 raise_on_warnings=True

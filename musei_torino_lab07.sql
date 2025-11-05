@@ -8,8 +8,8 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dump della struttura del database musei_torino
-CREATE DATABASE IF NOT EXISTS `musei_torino` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `musei_torino`;
+CREATE DATABASE IF NOT EXISTS `musei_torino_lab07` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `musei_torino_lab07`;
 
 -- Dump della struttura di tabella musei_torino.museo
 CREATE TABLE IF NOT EXISTS museo (
