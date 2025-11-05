@@ -31,5 +31,13 @@ class Controller:
         self._view.update()
 
     # AZIONE: MOSTRA ARTEFATTI
-    def mostra_artefatti(self, museo, epoca):
-        lista_artefatti = self._model.get_artefatti_filtrati(museo, epoca)
+    def mostra_artefatti(self, e):
+        self.museo_selezionato = self._view.dropdown_museo.value
+        self.epoca_selezionata = self._view.dropdown_epoca.value
+        lista_artefatti = self._model.get_artefatti_filtrati(self.museo_selezionato, self.epoca_selezionata)
+        self._view.listview_artefatti.controls.clear()
+        for artefatto in lista_artefatti:
+            self._view.listview_artefatti.controls.append(ft.Text(value = artefatto))
+        if len(self._view.listview_artefatti.controls) == 0:
+            self._view.show_alert("Nessun artefatto trovato")
+        self._view.update()

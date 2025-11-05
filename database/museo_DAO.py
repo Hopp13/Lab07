@@ -18,4 +18,5 @@ class MuseoDAO:
             lista_musei = []
             for row in cursor.fetchall():
                 lista_musei.append(row[0])
+            connection.close()
             return lista_musei

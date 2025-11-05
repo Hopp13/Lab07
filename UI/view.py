@@ -42,8 +42,8 @@ class View:
         self.controller.popola_dropdown(self.dropdown_epoca.label)
 
         # Sezione 3: Artefatti
-        self.button_mostra_artefatti = ft.ElevatedButton(text = "Mostra artefatti", on_click = self.controller.mostra_artefatti(self.dropdown_museo.value, self.dropdown_epoca.value))
-        self.listview_artefatti = ft.ListView()
+        button_mostra_artefatti = ft.ElevatedButton("Mostra artefatti", on_click = self.controller.mostra_artefatti)
+        self.listview_artefatti = ft.ListView(expand = True, spacing = 5, padding = 10, auto_scroll=True)
 
         # --- Toggle Tema ---
         self.toggle_cambia_tema = ft.Switch(label="Tema scuro", value=True, on_change=self.cambia_tema)
@@ -61,7 +61,7 @@ class View:
             ft.Divider(),
 
             # Sezione 3: Artefatti
-            self.button_mostra_artefatti,
+            button_mostra_artefatti,
             self.listview_artefatti,
         )
 
